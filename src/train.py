@@ -1,8 +1,6 @@
-
 from pathlib import Path
 import random
 import os
-from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -25,7 +23,7 @@ CHECKPOINT_PATH = (
 # -------------------------
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-3
-NUM_EPOCHS = 5
+NUM_EPOCHS = 10
 GRAD_CLIP = 1.0
 
 EMBED_DIM = 128
@@ -201,13 +199,7 @@ def train():
         lr=LEARNING_RATE,
     )
 
-    checkpoint_dir = Path(
-        os.getenv(
-            "SEQ2SEQ_CHECKPOINT_DIR",
-            "checkpoints"
-        )
-    )
-
+    checkpoint_dir = CHECKPOINT_PATH.parent
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     best_val_loss = float("inf")
 
@@ -268,7 +260,7 @@ def train():
                 },
             }
 
-            checkpoint_path = checkpoint_dir / "seq2seq_best.pt"
+            checkpoint_path = CHECKPOINT_PATH
             temp_path = checkpoint_dir / "seq2seq_best.tmp"
 
             torch.save(checkpoint, temp_path)
