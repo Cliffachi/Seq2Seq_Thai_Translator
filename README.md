@@ -48,7 +48,7 @@ English text is normalized to lowercase and punctuation is separated into tokens
 python data/clean_txt_.py
 ```
 
-Enter `tha` when prompted. The utility keeps the first two tab-separated columns and uses PyThaiNLP's `newmm` tokenizer for Thai text.
+(you can skip this part) Enter `tha` when prompted. The utility keeps the first two tab-separated columns and uses PyThaiNLP's `newmm` tokenizer for Thai text.
 
 ## Installation
 
