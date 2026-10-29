@@ -37,7 +37,7 @@ Place each sentence pair on its own line in a tab-separated UTF-8 file:
 
 ```text
 hello	สวัสดี
-how are you ?	คุณ เป็น อย่างไร บ้าง ?
+how are you ?	คุณ สบายดี ไหม ?
 ```
 
 The expected default path is `data/eng-tha.txt`.
