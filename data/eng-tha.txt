@@ -130,7 +130,7 @@ Tom lied.	ทอม โกหก
 Tom lies.	ทอม โกหก
 Tom lost.	ทอม แพ้
 Tom paid.	ทอม จ่าย
-Tom quit.	ทอม แ แก
+Tom quit.	ทอม ออก
 Tom's up.	ทอม ลุกขึ้น
 Too late.	สาย เกินไป
 Try hard.	พยายาม อย่าง หนัก
