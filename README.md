@@ -89,7 +89,7 @@ Default hyperparameters are defined at the top of `src/train.py`:
 |---|---:|
 | Batch size | 64 |
 | Learning rate | 0.001 |
-| Epochs | 30 |
+| Epochs | 10 |
 | Gradient clipping | 1.0 |
 | Embedding dimension | 128 |
 | Hidden dimension | 256 |
