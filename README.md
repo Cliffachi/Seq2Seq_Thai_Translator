@@ -95,13 +95,28 @@ Default hyperparameters are defined at the top of `src/train.py`:
 | Hidden dimension | 256 |
 | Maximum sentence length | 50 tokens |
 
-The current training script writes `seq2seq_best.pt` to:
+### Checkpoints
+
+By default, training saves the best model to:
 
 ```text
-C:\Users\Cliff Achi\seq2seq_checkpoints\seq2seq_best.pt
+checkpoints/seq2seq_best.pt
 ```
 
-Inference expects the checkpoint at `checkpoints/seq2seq_best.pt`, so copy the newly trained checkpoint into that directory before translating or update the paths in `src/train.py` and `src/inference.py` to the same location.
+The directory is created automatically if it does not exist. To save checkpoints elsewhere, set the `SEQ2SEQ_CHECKPOINT_DIR` environment variable before training:
+
+```powershell
+$env:SEQ2SEQ_CHECKPOINT_DIR = "C:\path\to\checkpoints"
+python src/train.py
+```
+
+On subsequent runs in the same PowerShell session, clear the override to return to the project directory:
+
+```powershell
+Remove-Item Env:SEQ2SEQ_CHECKPOINT_DIR
+```
+
+Inference reads from `checkpoints/seq2seq_best.pt` by default. When a custom checkpoint directory is used, copy or move the generated `seq2seq_best.pt` into the project's `checkpoints/` directory before running inference.
 
 ## Interactive Translation
 

@@ -1,6 +1,8 @@
 
 from pathlib import Path
 import random
+import os
+from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -14,13 +16,16 @@ from data_preprocessing import (
 )
 from model import Seq2Seq
 
-
+CHECKPOINT_PATH = (
+    Path(os.getenv("SEQ2SEQ_CHECKPOINT_DIR", "checkpoints"))
+    / "seq2seq_best.pt"
+)
 # -------------------------
 # Hyperparameters
 # -------------------------
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-3
-NUM_EPOCHS = 30
+NUM_EPOCHS = 5
 GRAD_CLIP = 1.0
 
 EMBED_DIM = 128
@@ -197,16 +202,18 @@ def train():
     )
 
     checkpoint_dir = Path(
-        r"C:\Users\Cliff Achi\seq2seq_checkpoints"
+        os.getenv(
+            "SEQ2SEQ_CHECKPOINT_DIR",
+            "checkpoints"
+        )
     )
-    checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
     best_val_loss = float("inf")
 
     # -------------------------
     # Training loop
     # -------------------------
-
     for epoch in range(1, NUM_EPOCHS + 1):
         train_loss = train_epoch(
             model,
@@ -260,10 +267,6 @@ def train():
                     "UNK": UNK_token,
                 },
             }
-
-            checkpoint_path = (
-                checkpoint_dir / "seq2seq_best.pt"
-            )
 
             checkpoint_path = checkpoint_dir / "seq2seq_best.pt"
             temp_path = checkpoint_dir / "seq2seq_best.tmp"
