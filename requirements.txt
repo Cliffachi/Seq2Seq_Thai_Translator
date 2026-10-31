@@ -1,3 +1,4 @@
-torch==2.15.0
-numpy==2.5.4
-pythainlp==0.13.0
+torch
+numpy
+pythainlp
+matplotlib>=3.8

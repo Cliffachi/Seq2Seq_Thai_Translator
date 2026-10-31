@@ -130,7 +130,7 @@ Tom lied.	ทอม โกหก
 Tom lies.	ทอม โกหก
 Tom lost.	ทอม แพ้
 Tom paid.	ทอม จ่าย
-Tom quit.	ทอม ออก
+Tom quit.	ทอม แ แก
 Tom's up.	ทอม ลุกขึ้น
 Too late.	สาย เกินไป
 Try hard.	พยายาม อย่าง หนัก
@@ -665,7 +665,6 @@ Let's watch TV.	ดู ทีวี กัน เถอะ
 May I sit here?	ฉัน ขอ นั่ง ที่นี่ ได้ ไหม ?
 My joints ache.	ข้อ ของ ฉัน ปวด
 My name is Tom.	ฉัน ชื่อว่า ทอม
-My name is Cliffe.	ฉัน ชื่อว่า คลิฟ
 Nobody hurt me.	ไม่ มี ใคร ทำร้าย ฉัน
 Nobody hurt me.	ไม่ มี ใคร ทำร้าย ผม
 Nobody laughed.	ไม่ มี ใคร หัวเราะ

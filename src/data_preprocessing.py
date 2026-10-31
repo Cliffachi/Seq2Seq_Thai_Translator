@@ -68,7 +68,6 @@ def normalize_english(text):
 
     return text.strip()
 
-
 def normalize_thai(text):
     # Preserve Thai characters and combining marks.
     # Assumes Thai has already been segmented by PyThaiNLP.
